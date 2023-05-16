@@ -1,0 +1,1 @@
+Der 56-jährige Patient klagt über anhaltende Schmerzen in der Brust und Atemnot.  Eine körperliche Untersuchung ergab eine verminderte Sauerstoffsättigung und ein Röntgenbild zeigte Anzeichen einer [MASK]. Der Patient wurde umgehend in die Notaufnahme eingewiesen und erhält nun eine Sauerstofftherapie sowie eine Antibiotikabehandlung.
