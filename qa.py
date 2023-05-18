@@ -1,6 +1,7 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering
 
+
 token = "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"
 tokenizer = AutoTokenizer.from_pretrained("GerMedBERT/medbert-512",use_auth_token=token)
 model = AutoModelForQuestionAnswering.from_pretrained("GerMedBERT/medbert-512",use_auth_token=token)

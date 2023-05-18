@@ -2,9 +2,18 @@ import torch
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 import streamlit as st
 
-token = "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"
-tokenizer = AutoTokenizer.from_pretrained("GerMedBERT/medbert-512",use_auth_token=token)
-model = AutoModelForMaskedLM.from_pretrained("GerMedBERT/medbert-512",use_auth_token=token)
+@st.cache
+def load_model():
+    token = "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"
+    tokenizer = AutoTokenizer.from_pretrained("GerMedBERT/medbert-512",use_auth_token=token)
+    model = AutoModelForMaskedLM.from_pretrained("GerMedBERT/medbert-512",use_auth_token=token)
+    return tokenizer, model
+
+# token = "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"
+# tokenizer = AutoTokenizer.from_pretrained("GerMedBERT/medbert-512",use_auth_token=token)
+# model = AutoModelForMaskedLM.from_pretrained("GerMedBERT/medbert-512",use_auth_token=token)
+
+tokenizer, model = load_model()
 
 # text = "Die [MASK] ist ein Organ des Menschen."
 # text ='''Der 56-jährige Patient klagt über anhaltende Schmerzen in der Brust und Atemnot. 
