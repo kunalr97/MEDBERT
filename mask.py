@@ -2,7 +2,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 import streamlit as st
 
-@st.cache
+@st.cache_resource
 def load_model():
     token = "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"
     tokenizer = AutoTokenizer.from_pretrained("GerMedBERT/medbert-512",use_auth_token=token)
