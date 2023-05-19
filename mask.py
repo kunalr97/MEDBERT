@@ -21,7 +21,8 @@ tokenizer, model = load_model()
 # Der Patient wurde umgehend in die Notaufnahme eingewiesen und erhält nun eine Sauerstofftherapie sowie eine Antibiotikabehandlung '''
 st.title("German MedBERT Masked Language Model")
 text = st.text_area("Enter a German clinical text with a [MASK] token:",height=20, max_chars=500)
-if text:
+# Check if the user has entered a text with a [MASK] token
+if text and text.count("[MASK]") == 1:
     input_ids = tokenizer.encode(text, return_tensors="pt")
     mask_token_index = torch.where(input_ids == tokenizer.mask_token_id)[1]
 
@@ -32,3 +33,5 @@ if text:
     for token in top_5_tokens:
         print(tokenizer.decode([token]))
         st.write("Predicted [MASK] Token: ",tokenizer.decode([token]))
+else:
+    st.write("Please enter a text with a [MASK] token!")
