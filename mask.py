@@ -21,17 +21,7 @@ tokenizer, model = load_model()
 # Der Patient wurde umgehend in die Notaufnahme eingewiesen und erhält nun eine Sauerstofftherapie sowie eine Antibiotikabehandlung '''
 st.title("German MedBERT Masked Language Model")
 text = st.text_area("Enter a German clinical text with a [MASK] token:",height=20, max_chars=500)
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.write(' ')
-
-with col2:
-    st.image('IAIS.PNG', width=200)
-with col3:
-    st.write(' ')
-st.write("<p style='text-align: center;'>Created by Dario Antweiler and Kunal Runwal", unsafe_allow_html=True)
-st.markdown("> MEDBERT.de: A Comprehensive German BERT Model for the Medical Domain.  \n Keno K. Bressem and Jens-Michalis Papaioannou and Paul Grundmann. 2023.  \n arXiv preprint arXiv:2303.08179. [https://doi.org/10.48550/arXiv.2303.08179]")
+st.write("You can use the following example text:  \n", "Der 56-jährige Patient klagt über anhaltende Schmerzen in der Brust und Atemnot.Eine körperliche Untersuchung ergab eine verminderte Sauerstoffsättigung und ein Röntgenbild zeigte Anzeichen einer [MASK].Der Patient wurde umgehend in die Notaufnahme eingewiesen und erhält nun eine Sauerstofftherapie sowie eine Antibiotikabehandlung")
 # Check if the user has entered a text with a [MASK] token
 if text and text.count("[MASK]") == 1:
     input_ids = tokenizer.encode(text, return_tensors="pt")
@@ -46,3 +36,16 @@ if text and text.count("[MASK]") == 1:
         st.write("Predicted [MASK] Token: ",tokenizer.decode([token]))
 else:
     st.write("Please enter a text with a [MASK] token!")
+st.markdown("> MEDBERT.de: A Comprehensive German BERT Model for the Medical Domain  \n Keno K. Bressem and Jens-Michalis Papaioannou and Paul Grundmann. 2023.  \n arXiv preprint arXiv:2303.08179 https://doi.org/10.48550/arXiv.2303.08179")
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.write(' ')
+
+with col2:
+    st.image('IAIS.PNG', width=200)
+with col3:
+    st.write(' ')
+st.write("<p style='text-align: center;'>Created by Dario Antweiler and Kunal Runwal", unsafe_allow_html=True)
+
+
