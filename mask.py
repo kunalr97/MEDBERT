@@ -37,6 +37,7 @@ if text and text.count("[MASK]") == 1:
 else:
     st.write("Please enter a text with a [MASK] token!")
 st.markdown("> MEDBERT.de: A Comprehensive German BERT Model for the Medical Domain  \n Keno K. Bressem and Jens-Michalis Papaioannou and Paul Grundmann. 2023.  \n arXiv preprint arXiv:2303.08179 https://doi.org/10.48550/arXiv.2303.08179")
+st.write(' ')
 col1, col2, col3 = st.columns(3)
 
 with col1:
