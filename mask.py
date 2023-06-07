@@ -31,7 +31,7 @@ with col2:
 with col3:
     st.write(' ')
 st.write("<p style='text-align: center;'>Created by Dario Antweiler and Kunal Runwal", unsafe_allow_html=True)
-st.markdown("> MEDBERT.de: A Comprehensive German BERT Model for the Medical Domain. \n Keno K. Bressem and Jens-Michalis Papaioannou and Paul Grundmann. 2023. \n arXiv preprint arXiv:2303.08179. [https://doi.org/10.48550/arXiv.2303.08179]")
+st.markdown("> MEDBERT.de: A Comprehensive German BERT Model for the Medical Domain.  \n Keno K. Bressem and Jens-Michalis Papaioannou and Paul Grundmann. 2023.  \n arXiv preprint arXiv:2303.08179. [https://doi.org/10.48550/arXiv.2303.08179]")
 # Check if the user has entered a text with a [MASK] token
 if text and text.count("[MASK]") == 1:
     input_ids = tokenizer.encode(text, return_tensors="pt")
