@@ -20,8 +20,8 @@ tokenizer, model = load_model()
 # Eine körperliche Untersuchung ergab eine verminderte Sauerstoffsättigung und ein Röntgenbild zeigte Anzeichen einer [MASK]. 
 # Der Patient wurde umgehend in die Notaufnahme eingewiesen und erhält nun eine Sauerstofftherapie sowie eine Antibiotikabehandlung '''
 st.title("German MedBERT Masked Language Model")
+st.write("You can use the following example text:  \n  \n", "Der 56-jährige Patient klagt über anhaltende Schmerzen in der Brust und Atemnot.Eine körperliche Untersuchung ergab eine verminderte Sauerstoffsättigung und ein Röntgenbild zeigte Anzeichen einer [MASK].Der Patient wurde umgehend in die Notaufnahme eingewiesen und erhält nun eine Sauerstofftherapie sowie eine Antibiotikabehandlung")
 text = st.text_area("Enter a German clinical text with a [MASK] token:",height=20, max_chars=500)
-st.write("You can use the following example text:  \n", "Der 56-jährige Patient klagt über anhaltende Schmerzen in der Brust und Atemnot.Eine körperliche Untersuchung ergab eine verminderte Sauerstoffsättigung und ein Röntgenbild zeigte Anzeichen einer [MASK].Der Patient wurde umgehend in die Notaufnahme eingewiesen und erhält nun eine Sauerstofftherapie sowie eine Antibiotikabehandlung")
 # Check if the user has entered a text with a [MASK] token
 if text and text.count("[MASK]") == 1:
     input_ids = tokenizer.encode(text, return_tensors="pt")
