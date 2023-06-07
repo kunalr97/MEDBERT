@@ -1,1 +1,7 @@
-Der 56-jährige Patient klagt über anhaltende Schmerzen in der Brust und Atemnot.  Eine körperliche Untersuchung ergab eine verminderte Sauerstoffsättigung und ein Röntgenbild zeigte Anzeichen einer [MASK]. Der Patient wurde umgehend in die Notaufnahme eingewiesen und erhält nun eine Sauerstofftherapie sowie eine Antibiotikabehandlung.
+Der 56-jährige Patient klagt über anhaltende Schmerzen in der Brust und Atemnot.  
+Eine körperliche Untersuchung ergab eine verminderte Sauerstoffsättigung und ein Röntgenbild zeigte Anzeichen einer [MASK]. 
+Der Patient wurde umgehend in die Notaufnahme eingewiesen und erhält nun eine Sauerstofftherapie sowie eine Antibiotikabehandlung.
+
+
+Der 65-jährige Patient wurde mit zunehmender Kurzatmigkeit, Brustschmerzen und Schwindel in die Notaufnahme eingeliefert. Nach eingehender Untersuchung und diagnostischen Tests wurde bei ihm eine akute [MASK] diagnostiziert. 
+Sofort wurde eine Thrombolyse durchgeführt, um den blockierten Herzkranzgefäß zu öffnen und den Blutfluss zum Herzmuskel wiederherzustellen.
