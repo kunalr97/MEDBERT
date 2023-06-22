@@ -47,7 +47,6 @@ st.write(' ')
 col1, col2, col3 = st.columns(3)
 with col1:
     st.write(' ')
-
 with col2:
     st.image('IAIS.PNG', width=200)
 with col3:
