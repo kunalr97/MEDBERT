@@ -22,8 +22,10 @@ tokenizer, model = load_model()
 st.title("German MedBERT Masked Language Model")
 st.write("You can use the following example text:  \n  \n", "Der 56-jährige Patient klagt über anhaltende Schmerzen in der Brust und Atemnot.Eine körperliche Untersuchung ergab eine verminderte Sauerstoffsättigung und ein Röntgenbild zeigte Anzeichen einer [MASK].Der Patient wurde umgehend in die Notaufnahme eingewiesen und erhält nun eine Sauerstofftherapie sowie eine Antibiotikabehandlung")
 text = st.text_area("Enter a German clinical text with a [MASK] token:",height=20, max_chars=500)
+# Create a enter button
+button = st.button("Predict")
 # Check if the user has entered a text with a [MASK] token
-if text and text.count("[MASK]") == 1:
+if text.count("[MASK]") == 1 and button:
     input_ids = tokenizer.encode(text, return_tensors="pt")
     mask_token_index = torch.where(input_ids == tokenizer.mask_token_id)[1]
 
@@ -32,8 +34,8 @@ if text and text.count("[MASK]") == 1:
     top_5_tokens = torch.topk(mask_token_logits, 5, dim=1).indices[0].tolist()
 
     for token in top_5_tokens:
-        print(tokenizer.decode([token]))
-        st.write("Predicted [MASK] Token: ",tokenizer.decode([token]))
+        st.write("Predictions")
+        st.write(tokenizer.decode([token]))
 else:
     st.write("Please enter a text with a [MASK] token!")
 st.markdown("> MEDBERT.de: A Comprehensive German BERT Model for the Medical Domain  \n Keno K. Bressem and Jens-Michalis Papaioannou and Paul Grundmann. 2023.  \n arXiv preprint arXiv:2303.08179 https://doi.org/10.48550/arXiv.2303.08179")
